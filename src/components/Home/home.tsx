@@ -1,8 +1,13 @@
+import { Button } from '@material-tailwind/react';
 
 function Home() {
-    return (
-        <button>Click me!</button>
-    );
+  return (
+    <>
+    
+      <Button>Button</Button>
+
+    </>
+  );
 }
 
 export default Home;

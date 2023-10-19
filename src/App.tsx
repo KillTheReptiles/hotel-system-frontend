@@ -1,9 +1,9 @@
-import Home from './components/Home/home';
+import AppRoutes from './components/routes';
 
 function App() {
   return (
     <>
-      <Home />
+      <AppRoutes />
     </>
   );
 }
