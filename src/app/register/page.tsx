@@ -3,8 +3,10 @@ import { useAuth } from '@/components/authContext';
 import { User } from '@/types/user';
 import { UserCredential } from 'firebase/auth';
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 function Page() {
+    const router = useRouter();
     const authContext = useAuth();
     const [UserForm, setUserForm] = useState<User>({
         username: '',
@@ -20,7 +22,8 @@ function Page() {
             // if response
             console.log(response);
             alert(`User created with email: ${response.user.email}`);
-        } catch (Error: any) {
+            router.push('/dashboard');
+    } catch (Error: any) {
             switch (Error.code) {
                 case 'auth/invalid-email':
                     alert('Invalid email');
@@ -50,6 +53,7 @@ function Page() {
     };
     return (
         <div>
+      <h1>Register</h1>
             <form onSubmit={(e) => handleFormSubmit(e)}>
                 <input
                     type='text'
